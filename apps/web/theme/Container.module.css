@@ -1,0 +1,15 @@
+.responsiveContainer {
+  max-width: 100%;
+}
+
+@media (min-width: 769px) {
+  .responsiveContainer {
+    padding-inline: var(--mantine-spacing-xl);
+  }
+}
+
+@media (min-width: 1025px) {
+  .responsiveContainer {
+    max-width: 1440px;
+  }
+}

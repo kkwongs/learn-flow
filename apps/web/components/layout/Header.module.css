@@ -1,0 +1,29 @@
+.courses {
+  &:hover {
+    background-color: var(--mantine-color-gray-1);
+    transition: background-color 200ms;
+  }
+}
+
+.header {
+  min-width: max-content;
+}
+
+.root {
+  position: relative;
+  padding: var(--mantine-spacing-sm);
+  transition: border-color 150ms ease;
+
+  &[data-checked] {
+    border-color: var(--mantine-primary-color-filled);
+    background-color: var(--mantine-primary-color-0);
+  }
+
+  &:hover {
+    background-color: var(--mantine-primary-color-0);
+  }
+}
+
+.label {
+  font-weight: 500;
+}
