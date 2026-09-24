@@ -5,6 +5,7 @@ import {
   ActionIcon,
   Anchor,
   Avatar,
+  Box,
   Button,
   Container,
   Flex,
@@ -12,9 +13,11 @@ import {
   Image,
   Menu,
   Modal,
+  PasswordInput,
   Radio,
   Stack,
   Text,
+  TextInput,
   UnstyledButton,
 } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
@@ -40,8 +43,31 @@ function UserButton({ image, name, ...others }: UserButtonProps) {
 }
 
 function UserMenu({ isLoggedIn }: { isLoggedIn: boolean }) {
-  if (isLoggedIn) {
-    return <Button>로그인</Button>
+  if (!isLoggedIn) {
+    const [opened, { open, close }] = useDisclosure(false)
+
+    return (
+      <>
+        <Modal opened={opened} onClose={close} closeOnClickOutside={false} centered>
+          <Text fw={700} size={'xl'} c={'green.6'} ta={'center'}>
+            LearnFlow
+          </Text>
+
+          <Box mt={'lg'}>
+            <TextInput data-autofocus placeholder="아이디" />
+            <PasswordInput placeholder="비밀번호" mt="xs" />
+          </Box>
+
+          <Button fullWidth mt={'md'}>
+            로그인
+          </Button>
+        </Modal>
+
+        <Button bdrs={'xl'} color="gray.1" c={'gray.7'} onClick={open}>
+          로그인
+        </Button>
+      </>
+    )
   }
   return (
     <Menu shadow="md" width={210}>
