@@ -3,7 +3,7 @@ import { AppShell } from '@mantine/core'
 import Header from './Header'
 import Footer from './Footer'
 
-import headerStyles from './Header.module.css'
+import headerStyles from '@/components/layout/Header/Header.module.css'
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
